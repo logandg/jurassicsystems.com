@@ -51,17 +51,17 @@
             var lockDownHTML5 = $('<audio preload="auto"/>');
             var dennisMusicHTML5 = $('<audio preload="auto"/>');
 
-            beepHTML5.append('<source src="/snd/beep.ogg">');
-            beepHTML5.append('<source src="/snd/beep.mp3">');
-            beepHTML5.append('<source src="/snd/beep.wav">');
+            beepHTML5.append('<source src="snd/beep.ogg">');
+            beepHTML5.append('<source src="snd/beep.mp3">');
+            beepHTML5.append('<source src="snd/beep.wav">');
 
-            lockDownHTML5.append('<source src="/snd/lockDown.ogg">');
-            lockDownHTML5.append('<source src="/snd/lockDown.mp3">');
-            lockDownHTML5.append('<source src="/snd/lockDown.wav">');
+            lockDownHTML5.append('<source src="snd/lockDown.ogg">');
+            lockDownHTML5.append('<source src="snd/lockDown.mp3">');
+            lockDownHTML5.append('<source src="snd/lockDown.wav">');
 
-            dennisMusicHTML5.append('<source src="/snd/dennisMusic.ogg">');
-            dennisMusicHTML5.append('<source src="/snd/dennisMusic.mp3">');
-            dennisMusicHTML5.append('<source src="/snd/dennisMusic.wav">');
+            dennisMusicHTML5.append('<source src="snd/dennisMusic.ogg">');
+            dennisMusicHTML5.append('<source src="snd/dennisMusic.mp3">');
+            dennisMusicHTML5.append('<source src="snd/dennisMusic.wav">');
 
             env.sounds.beep = {
                play: function() {
@@ -92,24 +92,24 @@
             });
          }  else {
             sm.setup({ 
-               url: '/swf/soundManager/',
+               url: 'swf/soundManager/',
                onready: function() {
                   env.sounds.beep = sm.createSound({
                      id: 'beep',
                      autoLoad: true,
-                     url: '/snd/beep.mp3'
+                     url: 'snd/beep.mp3'
                   });
 
                   env.sounds.lockDown = sm.createSound({
                      id: 'lockDown',
                      autoLoad: true,
-                     url: '/snd/lockDown.mp3'
+                     url: 'snd/lockDown.mp3'
                   });
 
                   env.sounds.dennisMusic = sm.createSound({
                      id: 'dennisMusic',
                      autoLoad: true,
-                     url: '/snd/dennisMusic.mp3',
+                     url: 'snd/dennisMusic.mp3',
                      onfinish: function() {
                         sm.play('dennisMusic');
                      }
@@ -175,7 +175,7 @@
 
             return;
          } else if (inputLine.split(' ').length > 2 && magicWord.trim() === 'please') {
-            $('#main-input').append($('<img id="asciiNewman" src="/img/asciiNewman.jpg" />'));
+            $('#main-input').append($('<img id="asciiNewman" src="img/asciiNewman.jpg" />'));
             $('#asciiNewman').load(function() {
                var wrap = $('.inner-wrap', env.active);
                wrap.scrollTop(wrap[0].scrollHeight);
@@ -214,7 +214,7 @@
                         clearInterval(errorSpam);
                      }
 
-                     $('#mac-hd-window').css('background-image', 'url(/img/macHDBlur.jpg)');
+                     $('#mac-hd-window').css('background-image', 'url(img/macHDBlur.jpg)');
                      $('#the-king-window').show();
                      setTimeout(function() {
                         $('#home-key').css('z-index', '64000');
@@ -415,11 +415,11 @@
          'macHDBlur.jpg',
          'asciiNewman.jpg',
          'zebraGirlWindow.jpg']).each(function() {
-            new Image().src = '/img/' + this;
+            new Image().src = 'img/' + this;
          });
 
       $.ajax({
-         url : '/swf/theKing.swf'
+         url : 'swf/theKing.swf'
       });
 
       // remove boot screen

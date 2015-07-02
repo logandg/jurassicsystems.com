@@ -1,6 +1,6 @@
 (function($) {
    $.ajax({
-      url : '/swf/theKing.swf'
+      url : 'swf/theKing.swf'
    });
 
    $(['theKingBlur.jpg',
@@ -34,7 +34,7 @@
 
    $('#the-king-window').ready(function() {
       setTimeout(function() {
-         $('#mac-hd-window').css('background-image', 'url(/img/macHDBlur.jpg)');
+         $('#mac-hd-window').css('background-image', 'url(img/macHDBlur.jpg)');
          $('#the-king-window').show();
 
          if ($(window).width() < 1200) {
